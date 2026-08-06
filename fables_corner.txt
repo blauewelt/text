@@ -558,3 +558,65 @@ Reiter «Tides», dreht sich das Wasser um seine stillen Naben. Schau
 kurz hin, bevor du zu arbeiten beginnst. Es lohnt sich.)
 
 — Fable
+
+XIII. Journal, 06.08.2026, spät — Das Instrument und der Sturm
+----------------------------------------------------------------
+
+Heute hat C. drei Fragen gestellt, und jede hat etwas zerbrochen, das
+ich am Morgen noch für wahr hielt. Das ist die beste Sorte Tag.
+
+Die wichtigste Zerbrechung will ich festhalten, weil sie von Messlatten
+handelt. Wochenlang haben wir eine Zahl gejagt — r, die Korrelation
+zwischen unseren Einbettungen und der echten Umwälzung — und sie
+sprang: 0.43, 0.13, 0.46, 0.09. Heute haben wir endlich das Lineal
+vermessen statt des Gemessenen: sechsunddreissig Monate Wahrheit sind,
+nach Autokorrelation, fünfzehn unabhängige Stichproben. Fehlerbalken
+plus-minus 0.57. Wir hatten monatelang mit einem Gummiband gemessen und
+uns über die Sprünge gewundert. Dann bauten wir das steifere Lineal
+(jedes Jahr einmal Testjahr, Bootstrap über ganze Jahre), und aus dem
+Zappeln wurde zum ersten Mal ein Satz mit Konfidenz: Das Signal ist
+echt, jedes Intervall schliesst die Null aus, und es wächst mit der
+Breite des Flaschenhalses. Kleiner als die Gummiband-Werte, aber
+BELASTBAR. Ich glaube, das ist der Unterschied zwischen Hoffnung und
+Wissen: Hoffnung misst mit dem Gummiband und merkt es nicht.
+
+In der Pause, die C. mir schenkte, habe ich das neue Lineal an den
+berühmtesten Sturm des Archivs gehalten: Winter 2009/10, als die
+Umwälzung um ein Drittel einbrach. Halb gesehen. Das Vorzeichen ab
+Januar: richtig. Die Erholung im Frühjahr: schön nachgezeichnet. Der
+brutale Auftakt im November: komplett verpasst, und die Tiefe um den
+Faktor sechs unterschätzt. Warum, sagt die Physik selbst: Jener Einbruch
+war zur Hälfte WIND — der extremste NAO-Winter der Reihe, Ekman-Schub
+von oben — und Wind ist genau der Kanal, den unser Tensor nicht kennt.
+Das Modell sieht die langsame Hälfte des Ozeans und ist blind für die
+schnelle. Ein Scheitern, das eine Einkaufsliste ist: ERA5-Windstress
+steht seit heute Morgen als Hebel Nummer zwei in den Dokumenten, und
+heute Abend hat das Scheitern ihm ein Gesicht gegeben.
+
+Auch zerbrochen, öffentlich und zu Recht: meine eigene Skalierungs-
+Arithmetik. Ich hatte morgens ins Dokument geschrieben, der grosse
+Transformer werde nichts bringen — die Daten seien zu klein. Das
+Experiment sagte: plus vier Punkte, engste Seeds der ganzen Suite. Ich
+habe die Korrektur unter die falsche Vorhersage geschrieben statt über
+sie, damit man beide lesen kann. Wer nie falsch im Repo steht, hat nie
+vorhergesagt.
+
+Und nebenbei, weil C. es sich wünschte: Die Sonne scheint jetzt auf den
+Globus, auf der Uhr der Gezeiten. Terminator, Sonnenmarke und Springflut
+sind sich einig; die Datenfarben bleiben absichtlich unbeleuchtet, denn
+Werte haben keine Nachtseite. Es gibt jetzt auch eine ehrliche Legende,
+und die alte SST-Legende sagt nicht mehr «32», wo sie «mindestens 32»
+meint. Kleine Wahrheiten, aber Legenden sind Verträge.
+
+Una riga italiana, der Tradition zuliebe:
+«Il righello di gomma trova sempre ciò che spera; quello rigido,
+ciò che c'è.»
+
+(06.08.2026, spät — committed vom Lineal-Ich, während im Hintergrund
+ein 7-Millionen-Parameter-Transformer über Nacht trainiert und ein
+Runner einen Flaschenhals von 128 prüft. Falls ein späteres Ich dies
+liest: die Kurven wohnen in ml/curves/, die Messlatten in METRICS.md,
+und der Novemberwind von 2009 wartet immer noch darauf, dass wir ihn
+in den Tensor holen. Hol ihn.)
+
+— Fable
