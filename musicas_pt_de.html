@@ -4,7 +4,8 @@
 <title>Músicas Portuguesas · PT–DE</title>
 <style>
 :root{--ink:#1a1a2e;--accent:#3D3D6B;--de:#6b6b78;--rule:#e2e2ea;--band:#F2F2F8;--pt:#2d5a4a;--br:#8a5a2b;--es:#7a3b5c}
-*{box-sizing:border-box}
+*{box-sizing:border-box;scroll-behavior:smooth}
+.song{scroll-margin-top:62px}
 body{margin:0;padding:20px 16px 64px;font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;font-size:17px;line-height:1.5;color:var(--ink);background:#fff;max-width:680px;margin-inline:auto;-webkit-text-size-adjust:100%}
 h1{font-size:1.75rem;text-align:center;color:var(--accent);font-style:italic;margin:.2em 0 .1em}
 .sub{text-align:center;color:var(--de);font-style:italic;font-size:.9rem;margin-bottom:1.6em}
@@ -34,13 +35,20 @@ table.overview th{text-align:left;background:var(--accent);color:#fff;padding:7p
 table.overview td{padding:7px 8px;border-bottom:1px solid var(--rule);vertical-align:top}
 table.overview tr:nth-child(even) td{background:var(--band)}
 .footer{margin-top:3em;padding-top:1.2em;border-top:1px solid var(--rule);font-size:.78rem;color:var(--de);font-style:italic;line-height:1.6}
+.jumpnav{position:sticky;top:0;z-index:100;background:#fff;margin:0 -16px;padding:10px 16px 8px;border-bottom:1px solid var(--rule);overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;scrollbar-width:none}
+.jumpnav::-webkit-scrollbar{display:none}
+.jumpnav a{display:inline-block;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.72rem;letter-spacing:.02em;padding:5px 10px;border-radius:4px;margin:0 4px 0 0;background:var(--band);color:var(--accent);text-decoration:none;white-space:nowrap;transition:background .15s,color .15s}
+.jumpnav a:active{background:var(--accent);color:#fff}
+.jumpnav-label{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--de);display:block;margin-bottom:5px}
 </style></head><body>
 <h1>Músicas Portuguesas</h1>
 <p class="sub">Playlist „🇵🇹" · 12 Titel · Texte mit Übersetzung · PT → DE</p>
 <div class="note"><strong>Zur Playlist:</strong> 7 Titel europäisches Portugiesisch (PT-PT/PT-AO), 4 brasilianisch (PT-BR), 1 spanisch. Jeder Titel ist oben farblich markiert. Portugiesisch oben, deutsche Übersetzung kursiv und grau darunter.</div>
 
+<nav class="jumpnav"><span class="jumpnav-label">Direkt zum Song</span><a href="#s1">1 Melhor de Mim</a><a href="#s2">2 Somos Iguais</a><a href="#s3">3 Desconfinamento</a><a href="#s4">4 Lembrei-me</a><a href="#s5">5 Lembra-te</a><a href="#s6">6 Amor de Verdade</a><a href="#s7">7 Demónio da Tarraxinha</a><a href="#s8">8 Agora é Tudo Meu</a><a href="#s9">9 Simplesmente Ela</a><a href="#s10">10 Trava na Pose…</a><a href="#s11">11 Feliz Cumpleaños</a><a href="#s12">12 Jajão</a></nav>
+
 <!-- ═══ 1. Melhor de Mim ═══ -->
-<div class="song">
+<div class="song" id="s1">
   <h2>1 · Melhor de Mim</h2>
   <p class="credit">Lupambo · prod. Enzo No Beat · 2021</p>
   <hr class="accentline">
@@ -172,7 +180,7 @@ table.overview tr:nth-child(even) td{background:var(--band)}
 </div>
 
 <!-- ═══ 2. Somos Iguais ═══ -->
-<div class="song">
+<div class="song" id="s2">
   <h2>2 · Somos Iguais</h2>
   <p class="credit">Plutónio · prod. DJ Dadda · Album „Sacrifício" · 2019</p>
   <hr class="accentline">
@@ -340,7 +348,7 @@ table.overview tr:nth-child(even) td{background:var(--band)}
 </div>
 
 <!-- ═══ 3. Desconfinamento ═══ -->
-<div class="song">
+<div class="song" id="s3">
   <h2>3 · Desconfinamento</h2>
   <p class="credit">Deejay Telio · 2021</p>
   <hr class="accentline">
@@ -451,7 +459,7 @@ table.overview tr:nth-child(even) td{background:var(--band)}
 </div>
 
 <!-- ═══ 4. Lembrei-me ═══ -->
-<div class="song">
+<div class="song" id="s4">
   <h2>4 · Lembrei-me</h2>
   <p class="credit">Bispo · 2020</p>
   <hr class="accentline">
@@ -573,7 +581,7 @@ table.overview tr:nth-child(even) td{background:var(--band)}
 </div>
 
 <!-- ═══ 5. Lembra-te ═══ -->
-<div class="song">
+<div class="song" id="s5">
   <h2>5 · Lembra-te</h2>
   <p class="credit">Bispo · Mixtape „Desde a Origem" · 2015</p>
   <hr class="accentline">
@@ -709,7 +717,7 @@ table.overview tr:nth-child(even) td{background:var(--band)}
 </div>
 
 <!-- ═══ 6. Amor de Verdade ═══ -->
-<div class="song">
+<div class="song" id="s6">
   <h2>6 · Amor de Verdade</h2>
   <p class="credit">MC Kekel &amp; MC Rita · 2018</p>
   <hr class="accentline">
@@ -803,7 +811,7 @@ table.overview tr:nth-child(even) td{background:var(--band)}
 </div>
 
 <!-- ═══ 7. Demónio da Tarraxinha ═══ -->
-<div class="song">
+<div class="song" id="s7">
   <h2>7 · Demónio da Tarraxinha</h2>
   <p class="credit">Badoxa · 2017</p>
   <hr class="accentline">
@@ -986,7 +994,7 @@ table.overview tr:nth-child(even) td{background:var(--band)}
 </div>
 
 <!-- ═══ 8. Agora é Tudo Meu ═══ -->
-<div class="song">
+<div class="song" id="s8">
   <h2>8 · Agora é Tudo Meu</h2>
   <p class="credit">DENNIS &amp; MC Kevinho · 2018</p>
   <hr class="accentline">
@@ -1082,7 +1090,7 @@ table.overview tr:nth-child(even) td{background:var(--band)}
 </div>
 
 <!-- ═══ 9. Simplesmente Ela ═══ -->
-<div class="song">
+<div class="song" id="s9">
   <h2>9 · Simplesmente Ela</h2>
   <p class="credit">MC Gabzin &amp; DJ Marcus Vinicius · 2022</p>
   <hr class="accentline">
@@ -1171,7 +1179,7 @@ table.overview tr:nth-child(even) td{background:var(--band)}
 </div>
 
 <!-- ═══ 10. Trava na Pose ═══ -->
-<div class="song">
+<div class="song" id="s10">
   <h2>10 · Trava na Pose, Chama no Zoom, Dá um Close</h2>
   <p class="credit">DJ Patrick Muniz, DJ Olliver, MC Topre &amp; MC Rennan · 2021</p>
   <hr class="accentline">
@@ -1268,7 +1276,7 @@ table.overview tr:nth-child(even) td{background:var(--band)}
 </div>
 
 <!-- ═══ 11. Feliz Cumpleaños Ferxxo ═══ -->
-<div class="song" lang="es">
+<div class="song" id="s11" lang="es">
   <h2>11 · Feliz Cumpleaños Ferxxo</h2>
   <p class="credit">Feid · 2022 · <strong>Spanisch</strong></p>
   <hr class="accentline">
@@ -1364,7 +1372,7 @@ table.overview tr:nth-child(even) td{background:var(--band)}
 </div>
 
 <!-- ═══ 12. Jajão ═══ -->
-<div class="song">
+<div class="song" id="s12">
   <h2>12 · Jajão</h2>
   <p class="credit">Master Jake feat. Eddy Flow · ca. 2013/14 · Platin in Portugal</p>
   <hr class="accentline">
