@@ -12,6 +12,7 @@ Usage (from the repo root):
 Optional:
     --out canzoni_it_de.html   output file (default: canzoni_it_de.html next to this repo's index.html)
     --spotify URL              add a "Playlist auf Spotify öffnen" button
+    --password SECRET          encrypt the output with staticrypt (requires: npx staticrypt)
 
 Data format expected in `songs`:
     ("__SECTION__", "Title", "Subtitle")                       section divider
@@ -24,6 +25,8 @@ import argparse
 import ast
 import html
 import re
+import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -200,6 +203,7 @@ def main():
     ap.add_argument("script", help="path to lyrics_pdf_generator.py")
     ap.add_argument("--out", default=str(REPO / "canzoni_it_de.html"))
     ap.add_argument("--spotify", help="optional Spotify playlist URL")
+    ap.add_argument("--password", help="encrypt output with staticrypt (requires npx)")
     args = ap.parse_args()
 
     sections = group(load_songs(args.script))
@@ -207,6 +211,40 @@ def main():
     Path(args.out).write_text(page, encoding="utf-8")
     n = sum(len(s[2]) for s in sections)
     print(f"wrote {args.out}: {len(sections)} sections, {n} songs")
+
+    if args.password:
+        npx = shutil.which("npx")
+        if not npx:
+            sys.exit("npx not found — install Node.js to use --password")
+        print("encrypting with staticrypt …")
+        import tempfile
+        out_path = Path(args.out)
+        # staticrypt reads from one file and writes the encrypted version
+        # to a directory; we write plaintext to a temp file, encrypt into
+        # the target directory, then rename.
+        tmp_dir = Path(tempfile.mkdtemp())
+        plain = tmp_dir / "plain.html"
+        plain.write_text(page, encoding="utf-8")
+        result = subprocess.run(
+            [npx, "--yes", "staticrypt@3", str(plain),
+             "--password", args.password,
+             "--short",
+             "-d", str(tmp_dir / "out"),
+             "--template-title", "Canzoni Italiane",
+             "--template-instructions", "Passwort eingeben, um die Seite zu öffnen.",
+             "--template-button", "Öffnen",
+             "--template-placeholder", "Passwort"],
+            capture_output=True, text=True,
+        )
+        if result.returncode != 0:
+            print(result.stderr, file=sys.stderr)
+            sys.exit(f"staticrypt failed (exit {result.returncode})")
+        encrypted = tmp_dir / "out" / "plain.html"
+        if not encrypted.exists():
+            sys.exit(f"staticrypt did not produce {encrypted}")
+        shutil.move(str(encrypted), str(out_path))
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+        print(f"encrypted → {args.out}")
 
 
 if __name__ == "__main__":
